@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BusRouter
-Sun Jun 22 14:46:24 2014
+Sun Jun 22 16:54:52 2014
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -13,16 +13,39 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. State Machine - |BusRouter|VideoController:u_VideoController|ram_current_state
- 10. User-Specified and Inferred Latches
- 11. General Register Statistics
- 12. Parameter Settings for User Entity Instance: VideoController:u_VideoController|VideoPLL:u_VideoPLL|altpll:altpll_component
- 13. altpll Parameter Settings by Entity Instance
- 14. Port Connectivity Checks: "VideoController:u_VideoController|VideoSyncGenerator:u_videoSyncer"
- 15. Port Connectivity Checks: "VideoController:u_VideoController|VideoPLL:u_VideoPLL"
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |BusRouter|VideoController:u_VideoController|ram_current_state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated
+ 17. Source assignments for VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1
+ 18. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component
+ 19. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated
+ 20. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p
+ 21. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_21c:wrptr_g1p
+ 22. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp
+ 23. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram
+ 24. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|dffpipe_c2e:rdaclr
+ 25. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp
+ 26. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16
+ 27. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp
+ 28. Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19
+ 29. Parameter Settings for User Entity Instance: VideoController:u_VideoController|VideoPLL:u_VideoPLL|altpll:altpll_component
+ 30. Parameter Settings for User Entity Instance: VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component
+ 31. Parameter Settings for User Entity Instance: VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component
+ 32. altpll Parameter Settings by Entity Instance
+ 33. altsyncram Parameter Settings by Entity Instance
+ 34. dcfifo Parameter Settings by Entity Instance
+ 35. Port Connectivity Checks: "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo"
+ 36. Port Connectivity Checks: "VideoController:u_VideoController|VideoCRAM:u_cram"
+ 37. Port Connectivity Checks: "VideoController:u_VideoController|VideoSyncGenerator:u_videoSyncer"
+ 38. Port Connectivity Checks: "VideoController:u_VideoController|VideoPLL:u_VideoPLL"
+ 39. Elapsed Time Per Partition
+ 40. Analysis & Synthesis Messages
 
 
 
@@ -48,18 +71,18 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun 22 14:46:24 2014       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jun 22 16:54:52 2014       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; BusRouter                                   ;
 ; Top-level Entity Name              ; BusRouter                                   ;
 ; Family                             ; Cyclone II                                  ;
-; Total logic elements               ; 143                                         ;
-;     Total combinational functions  ; 141                                         ;
+; Total logic elements               ; 162                                         ;
+;     Total combinational functions  ; 160                                         ;
 ;     Dedicated logic registers      ; 24                                          ;
 ; Total registers                    ; 24                                          ;
 ; Total pins                         ; 87                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 3,072                                       ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 1                                           ;
 +------------------------------------+---------------------------------------------+
@@ -161,167 +184,330 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                        ;
-+----------------------------------+-----------------+-----------------------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+-----------------------------+------------------------------------------------------------------+---------+
-; BusRouter.vhd                    ; yes             ; User VHDL File              ; Z:/68komputer/BusRouter.vhd                                      ;         ;
-; VideoController.vhd              ; yes             ; User VHDL File              ; Z:/68komputer/VideoController.vhd                                ;         ;
-; VideoPLL.vhd                     ; yes             ; User Wizard-Generated File  ; Z:/68komputer/VideoPLL.vhd                                       ;         ;
-; VideoSyncGenerator.vhd           ; yes             ; User VHDL File              ; Z:/68komputer/VideoSyncGenerator.vhd                             ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                ; c:/altera/13.0/quartus/libraries/megafunctions/altpll.tdf        ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc    ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                ; c:/altera/13.0/quartus/libraries/megafunctions/stratixii_pll.inc ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                ; c:/altera/13.0/quartus/libraries/megafunctions/cycloneii_pll.inc ;         ;
-+----------------------------------+-----------------+-----------------------------+------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------+---------+
+; default_palette.mif              ; yes             ; User Memory Initialization File  ; Z:/68komputer/default_palette.mif                                    ;         ;
+; BusRouter.vhd                    ; yes             ; User VHDL File                   ; Z:/68komputer/BusRouter.vhd                                          ;         ;
+; VideoController.vhd              ; yes             ; User VHDL File                   ; Z:/68komputer/VideoController.vhd                                    ;         ;
+; VideoPLL.vhd                     ; yes             ; User Wizard-Generated File       ; Z:/68komputer/VideoPLL.vhd                                           ;         ;
+; VideoSyncGenerator.vhd           ; yes             ; User VHDL File                   ; Z:/68komputer/VideoSyncGenerator.vhd                                 ;         ;
+; VideoCRAM.vhd                    ; yes             ; User Wizard-Generated File       ; Z:/68komputer/VideoCRAM.vhd                                          ;         ;
+; VideoWriteFIFO.vhd               ; yes             ; User Wizard-Generated File       ; Z:/68komputer/VideoWriteFIFO.vhd                                     ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_5cn1.tdf           ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/altsyncram_5cn1.tdf                                 ;         ;
+; db/altsyncram_g7v1.tdf           ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/altsyncram_g7v1.tdf                                 ;         ;
+; dcfifo.tdf                       ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/dcfifo.tdf            ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_counter.inc       ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
+; a_graycounter.inc                ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/a_graycounter.inc     ;         ;
+; a_fefifo.inc                     ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/a_fefifo.inc          ;         ;
+; a_gray2bin.inc                   ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/a_gray2bin.inc        ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/dffpipe.inc           ;         ;
+; alt_sync_fifo.inc                ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/alt_sync_fifo.inc     ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_compare.inc       ;         ;
+; altsyncram_fifo.inc              ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram_fifo.inc   ;         ;
+; db/dcfifo_2hj1.tdf               ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/dcfifo_2hj1.tdf                                     ;         ;
+; db/a_graycounter_d86.tdf         ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/a_graycounter_d86.tdf                               ;         ;
+; db/a_graycounter_21c.tdf         ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/a_graycounter_21c.tdf                               ;         ;
+; db/a_graycounter_11c.tdf         ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/a_graycounter_11c.tdf                               ;         ;
+; db/altsyncram_3nu.tdf            ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/altsyncram_3nu.tdf                                  ;         ;
+; db/dffpipe_c2e.tdf               ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/dffpipe_c2e.tdf                                     ;         ;
+; db/alt_synch_pipe_5u7.tdf        ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/alt_synch_pipe_5u7.tdf                              ;         ;
+; db/dffpipe_vu8.tdf               ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/dffpipe_vu8.tdf                                     ;         ;
+; db/alt_synch_pipe_6u7.tdf        ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/alt_synch_pipe_6u7.tdf                              ;         ;
+; db/dffpipe_0v8.tdf               ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/dffpipe_0v8.tdf                                     ;         ;
+; db/cmpr_q16.tdf                  ; yes             ; Auto-Generated Megafunction      ; Z:/68komputer/db/cmpr_q16.tdf                                        ;         ;
++----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                     ;
-+---------------------------------------------+-------------------------------------------------------------------+
-; Resource                                    ; Usage                                                             ;
-+---------------------------------------------+-------------------------------------------------------------------+
-; Estimated Total logic elements              ; 143                                                               ;
-;                                             ;                                                                   ;
-; Total combinational functions               ; 141                                                               ;
-; Logic element usage by number of LUT inputs ;                                                                   ;
-;     -- 4 input functions                    ; 31                                                                ;
-;     -- 3 input functions                    ; 81                                                                ;
-;     -- <=2 input functions                  ; 29                                                                ;
-;                                             ;                                                                   ;
-; Logic elements by mode                      ;                                                                   ;
-;     -- normal mode                          ; 123                                                               ;
-;     -- arithmetic mode                      ; 18                                                                ;
-;                                             ;                                                                   ;
-; Total registers                             ; 24                                                                ;
-;     -- Dedicated logic registers            ; 24                                                                ;
-;     -- I/O registers                        ; 0                                                                 ;
-;                                             ;                                                                   ;
-; I/O pins                                    ; 87                                                                ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                 ;
-; Total PLLs                                  ; 1                                                                 ;
-;     -- PLLs                                 ; 1                                                                 ;
-;                                             ;                                                                   ;
-; Maximum fan-out node                        ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ;
-; Maximum fan-out                             ; 26                                                                ;
-; Total fan-out                               ; 543                                                               ;
-; Average fan-out                             ; 2.15                                                              ;
-+---------------------------------------------+-------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                       ;
++---------------------------------------------+-------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                               ;
++---------------------------------------------+-------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 162                                                                                 ;
+;                                             ;                                                                                     ;
+; Total combinational functions               ; 160                                                                                 ;
+; Logic element usage by number of LUT inputs ;                                                                                     ;
+;     -- 4 input functions                    ; 35                                                                                  ;
+;     -- 3 input functions                    ; 93                                                                                  ;
+;     -- <=2 input functions                  ; 32                                                                                  ;
+;                                             ;                                                                                     ;
+; Logic elements by mode                      ;                                                                                     ;
+;     -- normal mode                          ; 142                                                                                 ;
+;     -- arithmetic mode                      ; 18                                                                                  ;
+;                                             ;                                                                                     ;
+; Total registers                             ; 24                                                                                  ;
+;     -- Dedicated logic registers            ; 24                                                                                  ;
+;     -- I/O registers                        ; 0                                                                                   ;
+;                                             ;                                                                                     ;
+; I/O pins                                    ; 87                                                                                  ;
+; Total memory bits                           ; 3072                                                                                ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                   ;
+; Total PLLs                                  ; 1                                                                                   ;
+;     -- PLLs                                 ; 1                                                                                   ;
+;                                             ;                                                                                     ;
+; Maximum fan-out node                        ; VideoController:u_VideoController|VideoPLL:u_VideoPLL|altpll:altpll_component|_clk0 ;
+; Maximum fan-out                             ; 36                                                                                  ;
+; Total fan-out                               ; 752                                                                                 ;
+; Average fan-out                             ; 2.65                                                                                ;
++---------------------------------------------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                            ;
-+------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Library Name ;
-+------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
-; |BusRouter                               ; 141 (0)           ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 87   ; 0            ; |BusRouter                                                                               ;              ;
-;    |VideoController:u_VideoController|   ; 141 (80)          ; 24 (4)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController                                             ;              ;
-;       |VideoPLL:u_VideoPLL|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoPLL:u_VideoPLL                         ;              ;
-;          |altpll:altpll_component|       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoPLL:u_VideoPLL|altpll:altpll_component ;              ;
-;       |VideoSyncGenerator:u_videoSyncer| ; 61 (61)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoSyncGenerator:u_videoSyncer            ;              ;
-+------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                      ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |BusRouter                                   ; 160 (1)           ; 24 (0)       ; 3072        ; 0            ; 0       ; 0         ; 87   ; 0            ; |BusRouter                                                                                                                                               ;              ;
+;    |VideoController:u_VideoController|       ; 159 (106)         ; 24 (4)       ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController                                                                                                             ;              ;
+;       |VideoCRAM:u_cram|                     ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoCRAM:u_cram                                                                                            ;              ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component                                                            ;              ;
+;             |altsyncram_5cn1:auto_generated| ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated                             ;              ;
+;                |altsyncram_g7v1:altsyncram1| ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1 ;              ;
+;       |VideoPLL:u_VideoPLL|                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoPLL:u_VideoPLL                                                                                         ;              ;
+;          |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoPLL:u_VideoPLL|altpll:altpll_component                                                                 ;              ;
+;       |VideoSyncGenerator:u_videoSyncer|     ; 53 (53)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BusRouter|VideoController:u_VideoController|VideoSyncGenerator:u_videoSyncer                                                                            ;              ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                         ;
-+--------+--------------+---------+--------------+--------------+------------------------------------------------------------------+----------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                  ; IP Include File            ;
-+--------+--------------+---------+--------------+--------------+------------------------------------------------------------------+----------------------------+
-; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |BusRouter|VideoController:u_VideoController|VideoPLL:u_VideoPLL ; Z:/68komputer/VideoPLL.vhd ;
-+--------+--------------+---------+--------------+--------------+------------------------------------------------------------------+----------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                          ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+---------------------+
+; Name                                                                                                                                                     ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                 ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+---------------------+
+; VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 256          ; 24           ; 256          ; 24           ; 6144 ; default_palette.mif ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                      ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------+----------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                         ; IP Include File                  ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------+----------------------------------+
+; Altera ; RAM: 2-PORT  ; 13.0    ; N/A          ; N/A          ; |BusRouter|VideoController:u_VideoController|VideoCRAM:u_cram           ; Z:/68komputer/VideoCRAM.vhd      ;
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |BusRouter|VideoController:u_VideoController|VideoPLL:u_VideoPLL        ; Z:/68komputer/VideoPLL.vhd       ;
+; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |BusRouter|VideoController:u_VideoController|VideoWriteFIFO:u_writefifo ; Z:/68komputer/VideoWriteFIFO.vhd ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------+----------------------------------+
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |BusRouter|VideoController:u_VideoController|ram_current_state                                                                                ;
-+---------------------------------+---------------------------------+---------------------------------+----------------------------+----------------------------+
-; Name                            ; ram_current_state.ReadDataVideo ; ram_current_state.ReadAddrVideo ; ram_current_state.CPUSlot1 ; ram_current_state.CPUSlot0 ;
-+---------------------------------+---------------------------------+---------------------------------+----------------------------+----------------------------+
-; ram_current_state.CPUSlot0      ; 0                               ; 0                               ; 0                          ; 0                          ;
-; ram_current_state.CPUSlot1      ; 0                               ; 0                               ; 1                          ; 1                          ;
-; ram_current_state.ReadAddrVideo ; 0                               ; 1                               ; 0                          ; 1                          ;
-; ram_current_state.ReadDataVideo ; 1                               ; 0                               ; 0                          ; 1                          ;
-+---------------------------------+---------------------------------+---------------------------------+----------------------------+----------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BusRouter|VideoController:u_VideoController|ram_current_state                                                                                                                                                                     ;
++---------------------------------+-----------------------------+-----------------------------+---------------------------------+---------------------------------+----------------------------+------------------------+----------------------------+
+; Name                            ; ram_current_state.ClearData ; ram_current_state.ClearAddr ; ram_current_state.ReadDataVideo ; ram_current_state.ReadAddrVideo ; ram_current_state.CPUSlot1 ; ram_current_state.Idle ; ram_current_state.CPUSlot0 ;
++---------------------------------+-----------------------------+-----------------------------+---------------------------------+---------------------------------+----------------------------+------------------------+----------------------------+
+; ram_current_state.CPUSlot0      ; 0                           ; 0                           ; 0                               ; 0                               ; 0                          ; 0                      ; 0                          ;
+; ram_current_state.Idle          ; 0                           ; 0                           ; 0                               ; 0                               ; 0                          ; 1                      ; 1                          ;
+; ram_current_state.CPUSlot1      ; 0                           ; 0                           ; 0                               ; 0                               ; 1                          ; 0                      ; 1                          ;
+; ram_current_state.ReadAddrVideo ; 0                           ; 0                           ; 0                               ; 1                               ; 0                          ; 0                      ; 1                          ;
+; ram_current_state.ReadDataVideo ; 0                           ; 0                           ; 1                               ; 0                               ; 0                          ; 0                      ; 1                          ;
+; ram_current_state.ClearAddr     ; 0                           ; 1                           ; 0                               ; 0                               ; 0                          ; 0                      ; 1                          ;
+; ram_current_state.ClearData     ; 1                           ; 0                           ; 0                               ; 0                               ; 0                          ; 0                      ; 1                          ;
++---------------------------------+-----------------------------+-----------------------------+---------------------------------+---------------------------------+----------------------------+------------------------+----------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                              ;
-+-----------------------------------------------------+-------------------------------------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                                               ; Free of Timing Hazards ;
-+-----------------------------------------------------+-------------------------------------------------------------------+------------------------+
-; VideoController:u_VideoController|current_rgb[20]   ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[21]   ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[22]   ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[23]   ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[12]   ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[13]   ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[14]   ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[15]   ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[4]    ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[5]    ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[6]    ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|current_rgb[7]    ; VideoController:u_VideoController|current_rgb                     ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[0]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[1]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[2]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[3]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[4]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[5]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[6]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[7]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[8]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[9]      ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[10]     ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[11]     ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[12]     ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[13]     ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[14]     ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[15]     ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[16]     ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_Addr[17]     ; VideoController:u_VideoController|ram_current_state.ReadAddrVideo ; yes                    ;
-; VideoController:u_VideoController|SRAM_CE           ; VideoController:u_VideoController|SRAM_CE                         ; yes                    ;
-; VideoController:u_VideoController|SRAM_OE           ; VideoController:u_VideoController|SRAM_CE                         ; yes                    ;
-; VideoController:u_VideoController|SRAM_WE           ; VideoController:u_VideoController|SRAM_CE                         ; yes                    ;
-; VideoController:u_VideoController|SRAM_LB           ; VideoController:u_VideoController|SRAM_CE                         ; yes                    ;
-; VideoController:u_VideoController|SRAM_UB           ; VideoController:u_VideoController|SRAM_CE                         ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[12]     ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[4]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[13]     ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[5]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[14]     ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[6]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[15]     ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[7]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[8]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[0]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[9]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[1]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[10]     ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[2]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[11]     ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_cur[3]      ; VideoController:u_VideoController|ram_current_state.CPUSlot0      ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[12]    ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[4]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[13]    ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[5]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[14]    ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[6]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[15]    ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[7]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[8]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[0]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[9]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[1]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[10]    ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[2]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[11]    ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; VideoController:u_VideoController|pxgen_data[3]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
-; Number of user-specified and inferred latches = 67  ;                                                                   ;                        ;
-+-----------------------------------------------------+-------------------------------------------------------------------+------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                               ;
++------------------------------------------------------+-------------------------------------------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal                                               ; Free of Timing Hazards ;
++------------------------------------------------------+-------------------------------------------------------------------+------------------------+
+; VideoController:u_VideoController|SRAM_Addr[0]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[1]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[2]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[3]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[4]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[5]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[6]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[7]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[8]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[9]       ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[10]      ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[11]      ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[12]      ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[13]      ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[14]      ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[15]      ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[16]      ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Addr[17]      ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_CE            ; VideoController:u_VideoController|WideOr1                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_OE            ; VideoController:u_VideoController|WideOr1                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_WE            ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|SRAM_LB            ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|SRAM_UB            ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|cram_read_addr[0]  ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|cram_read_addr[1]  ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|cram_read_addr[2]  ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|cram_read_addr[3]  ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|cram_read_addr[4]  ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|cram_read_addr[5]  ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|cram_read_addr[6]  ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|cram_read_addr[7]  ; VideoController:u_VideoController|WideOr5                         ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[0]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[8]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[1]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[9]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[2]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[10]      ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[3]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[11]      ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[4]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[12]      ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[5]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[13]      ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[6]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[14]      ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[7]       ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|pxgen_cur[15]      ; VideoController:u_VideoController|ram_current_state.CPUSlot1      ; yes                    ;
+; VideoController:u_VideoController|SRAM_Data[0]$latch ; VideoController:u_VideoController|WideOr6                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Data[0]_966   ; VideoController:u_VideoController|WideOr6                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Data[1]$latch ; VideoController:u_VideoController|WideOr6                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Data[2]$latch ; VideoController:u_VideoController|WideOr6                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Data[3]$latch ; VideoController:u_VideoController|WideOr6                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Data[4]$latch ; VideoController:u_VideoController|WideOr6                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Data[5]$latch ; VideoController:u_VideoController|WideOr6                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Data[6]$latch ; VideoController:u_VideoController|WideOr6                         ; yes                    ;
+; VideoController:u_VideoController|SRAM_Data[7]$latch ; VideoController:u_VideoController|WideOr6                         ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[0]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[8]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[1]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[9]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[2]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[10]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[3]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[11]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[4]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[12]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[5]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[13]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[6]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[14]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[7]      ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; VideoController:u_VideoController|pxgen_data[15]     ; VideoController:u_VideoController|ram_current_state.ReadDataVideo ; yes                    ;
+; Number of user-specified and inferred latches = 72   ;                                                                   ;                        ;
++------------------------------------------------------+-------------------------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                   ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                                                                               ; Reason for Removal                     ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[0] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[0] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[0]                                          ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[1] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[1] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[1]                                          ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[2] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[2] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[2]                                          ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[3] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[3] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[3]                                          ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[4] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[4] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[4]                                          ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[5] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[5] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[5]                                          ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[0] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[0] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[0]                                                  ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[1] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[1] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[1]                                                  ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[2] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[2] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[2]                                                  ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[3] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[3] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[3]                                                  ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[4] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[4] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[4]                                                  ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[5] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[5] ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[5]                                                  ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|p0addr                                                      ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|dffpipe_c2e:rdaclr|dffe15a[0]                               ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|counter13a[0..5]                 ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|parity11                         ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|sub_parity12a0                   ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|sub_parity12a1                   ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|counter7a[0..5]                 ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|parity5                         ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|sub_parity6a0                   ; Lost fanout                            ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|sub_parity6a1                   ; Lost fanout                            ;
+; VideoController:u_VideoController|ram_current_state.Idle                                                                                                                    ; Stuck at GND due to stuck port data_in ;
+; VideoController:u_VideoController|ram_current_state.ClearAddr                                                                                                               ; Stuck at GND due to stuck port data_in ;
+; VideoController:u_VideoController|ram_current_state.ClearData                                                                                                               ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 59                                                                                                                                      ;                                        ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                               ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                                       ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[0] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[0], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[0],                                          ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|counter13a[0]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[1] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[1], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[1],                                          ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|counter13a[1]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[2] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[2], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[2],                                          ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|counter13a[2]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[3] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[3], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[3],                                          ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|counter13a[3]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[4] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[4], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[4],                                          ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|counter13a[4]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe18a[5] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16|dffe17a[5], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|delayed_wrptr_g[5],                                          ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp|counter13a[5]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[0] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[0], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[0],                                                  ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|counter7a[0]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[1] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[1], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[1],                                                  ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|counter7a[1]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[2] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[2], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[2],                                                  ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|counter7a[2]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[3] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[3], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[3],                                                  ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|counter7a[3]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[4] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[4], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[4],                                                  ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|counter7a[4]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe21a[5] ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19|dffe20a[5], ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|rdptr_g[5],                                                  ;
+;                                                                                                                                                                             ;                           ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p|counter7a[5]                     ;
+; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|p0addr                                                      ; Lost Fanouts              ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|dffpipe_c2e:rdaclr|dffe15a[0]                                ;
+; VideoController:u_VideoController|ram_current_state.ClearAddr                                                                                                               ; Stuck at GND              ; VideoController:u_VideoController|ram_current_state.ClearData                                                                                                                ;
+;                                                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                                              ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -337,6 +523,138 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |BusRouter|VideoController:u_VideoController|Selector34 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                         ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                          ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1 ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                     ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                      ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component ;
++---------------------------------+-------+------+------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                         ;
++---------------------------------+-------+------+------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                          ;
++---------------------------------+-------+------+------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                    ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                     ;
+; REMOVE_DUPLICATE_REGISTERS      ; OFF   ; -    ; -                                                                                     ;
+; POWER_UP_LEVEL                  ; LOW   ; -    ; p0addr                                                                                ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p ;
++----------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment     ; Value ; From ; To                                                                                                                                 ;
++----------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------+
+; POWER_UP_LEVEL ; HIGH  ; -    ; sub_parity6a0                                                                                                                      ;
+; POWER_UP_LEVEL ; LOW   ; -    ; parity5                                                                                                                            ;
++----------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_21c:wrptr_g1p ;
++----------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment     ; Value ; From ; To                                                                                                                                 ;
++----------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------+
+; POWER_UP_LEVEL ; HIGH  ; -    ; counter8a0                                                                                                                         ;
+; POWER_UP_LEVEL ; HIGH  ; -    ; parity9                                                                                                                            ;
++----------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp ;
++----------------+-------+------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Assignment     ; Value ; From ; To                                                                                                                                ;
++----------------+-------+------+-----------------------------------------------------------------------------------------------------------------------------------+
+; POWER_UP_LEVEL ; HIGH  ; -    ; sub_parity12a0                                                                                                                    ;
+; POWER_UP_LEVEL ; LOW   ; -    ; parity11                                                                                                                          ;
++----------------+-------+------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|dffpipe_c2e:rdaclr ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                       ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                        ;
+; PRESERVE_REGISTER               ; ON    ; -    ; -                                                                                                        ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------+
+; Assignment            ; Value ; From ; To                                                                                                                         ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION ; OFF   ; -    ; -                                                                                                                          ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16 ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                                                     ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                                      ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------+
+; Assignment            ; Value ; From ; To                                                                                                                         ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION ; OFF   ; -    ; -                                                                                                                          ;
++-----------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19 ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                                                     ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                                      ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -713,6 +1031,100 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                ;
++------------------------------------+----------------------+---------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                             ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                             ;
+; WIDTH_A                            ; 24                   ; Signed Integer                                                      ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                                                      ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                             ;
+; WIDTH_B                            ; 24                   ; Signed Integer                                                      ;
+; WIDTHAD_B                          ; 8                    ; Signed Integer                                                      ;
+; NUMWORDS_B                         ; 256                  ; Signed Integer                                                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                             ;
+; OUTDATA_REG_B                      ; CLOCK1               ; Untyped                                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                             ;
+; INIT_FILE                          ; default_palette.mif  ; Untyped                                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                             ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                             ;
+; CLOCK_ENABLE_INPUT_B               ; BYPASS               ; Untyped                                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                             ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                                             ;
+; CBXI_PARAMETER                     ; altsyncram_5cn1      ; Untyped                                                             ;
++------------------------------------+----------------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component ;
++-------------------------+-------------+-------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                                                                      ;
++-------------------------+-------------+-------------------------------------------------------------------------------------------+
+; WIDTH_BYTEENA           ; 1           ; Untyped                                                                                   ;
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                              ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                              ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                            ;
+; LPM_WIDTH               ; 34          ; Signed Integer                                                                            ;
+; LPM_NUMWORDS            ; 32          ; Signed Integer                                                                            ;
+; LPM_WIDTHU              ; 5           ; Signed Integer                                                                            ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                                                                   ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                   ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                   ;
+; USE_EAB                 ; ON          ; Untyped                                                                                   ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                   ;
+; DELAY_RDUSEDW           ; 1           ; Untyped                                                                                   ;
+; DELAY_WRUSEDW           ; 1           ; Untyped                                                                                   ;
+; RDSYNC_DELAYPIPE        ; 4           ; Signed Integer                                                                            ;
+; WRSYNC_DELAYPIPE        ; 4           ; Signed Integer                                                                            ;
+; CLOCKS_ARE_SYNCHRONIZED ; FALSE       ; Untyped                                                                                   ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                   ;
+; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                                                                   ;
+; ADD_USEDW_MSB_BIT       ; OFF         ; Untyped                                                                                   ;
+; WRITE_ACLR_SYNCH        ; OFF         ; Untyped                                                                                   ;
+; READ_ACLR_SYNCH         ; OFF         ; Untyped                                                                                   ;
+; CBXI_PARAMETER          ; dcfifo_2hj1 ; Untyped                                                                                   ;
++-------------------------+-------------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                                                                  ;
 +-------------------------------+-------------------------------------------------------------------------------+
@@ -728,6 +1140,68 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- VCO_MULTIPLY_BY        ; 0                                                                             ;
 ;     -- VCO_DIVIDE_BY          ; 0                                                                             ;
 +-------------------------------+-------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                               ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                              ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                                  ;
+; Entity Instance                           ; VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                          ;
+;     -- WIDTH_A                            ; 24                                                                                 ;
+;     -- NUMWORDS_A                         ; 256                                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                       ;
+;     -- WIDTH_B                            ; 24                                                                                 ;
+;     -- NUMWORDS_B                         ; 256                                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                             ;
+;     -- OUTDATA_REG_B                      ; CLOCK1                                                                             ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                          ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; dcfifo Parameter Settings by Entity Instance                                                                      ;
++----------------------------+--------------------------------------------------------------------------------------+
+; Name                       ; Value                                                                                ;
++----------------------------+--------------------------------------------------------------------------------------+
+; Number of entity instances ; 1                                                                                    ;
+; Entity Instance            ; VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component ;
+;     -- FIFO Type           ; Dual Clock                                                                           ;
+;     -- LPM_WIDTH           ; 34                                                                                   ;
+;     -- LPM_NUMWORDS        ; 32                                                                                   ;
+;     -- LPM_SHOWAHEAD       ; OFF                                                                                  ;
+;     -- USE_EAB             ; ON                                                                                   ;
++----------------------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo"                          ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; data    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rdreq   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wrreq   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rdempty ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; wrfull  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VideoController:u_VideoController|VideoCRAM:u_cram"                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; wraddress ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wren      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q[19..16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[11..8]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[3..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -764,7 +1238,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Sun Jun 22 14:46:22 2014
+    Info: Processing started: Sun Jun 22 16:54:47 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off komputatron -c BusRouter
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file busrouter.vhd
@@ -779,97 +1253,153 @@ Info (12021): Found 2 design units, including 1 entities, in source file videopl
 Info (12021): Found 2 design units, including 1 entities, in source file videosyncgenerator.vhd
     Info (12022): Found design unit 1: VideoSyncGenerator-behavioral
     Info (12023): Found entity 1: VideoSyncGenerator
-Info (12021): Found 2 design units, including 1 entities, in source file videosramcontroller.vhd
-    Info (12022): Found design unit 1: VideoSRAMController-behavioral
-    Info (12023): Found entity 1: VideoSRAMController
+Info (12021): Found 2 design units, including 1 entities, in source file videocram.vhd
+    Info (12022): Found design unit 1: videocram-SYN
+    Info (12023): Found entity 1: VideoCRAM
+Info (12021): Found 2 design units, including 1 entities, in source file videowritefifo.vhd
+    Info (12022): Found design unit 1: videowritefifo-SYN
+    Info (12023): Found entity 1: VideoWriteFIFO
 Info (12127): Elaborating entity "BusRouter" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at BusRouter.vhd(9): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10873): Using initial value X (don't care) for net "LEDR[9..4]" at BusRouter.vhd(9)
 Warning (10873): Using initial value X (don't care) for net "LEDG[7..1]" at BusRouter.vhd(10)
 Info (12129): Elaborating entity "VideoController" using architecture "A:behavioral" for hierarchy "VideoController:u_VideoController"
-Warning (10492): VHDL Process Statement warning at VideoController.vhd(92): signal "current_rgb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at VideoController.vhd(93): signal "current_rgb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at VideoController.vhd(94): signal "current_rgb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at VideoController.vhd(122): signal "pxgen_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at VideoController.vhd(127): signal "pxgen_cur" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at VideoController.vhd(138): signal "row" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at VideoController.vhd(138): signal "col" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at VideoController.vhd(144): signal "pxgen_cur" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at VideoController.vhd(111): inferring latch(es) for signal or variable "SRAM_CE", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at VideoController.vhd(111): inferring latch(es) for signal or variable "SRAM_OE", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at VideoController.vhd(111): inferring latch(es) for signal or variable "SRAM_WE", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at VideoController.vhd(111): inferring latch(es) for signal or variable "SRAM_UB", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at VideoController.vhd(111): inferring latch(es) for signal or variable "SRAM_LB", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at VideoController.vhd(111): inferring latch(es) for signal or variable "pxgen_cur", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at VideoController.vhd(111): inferring latch(es) for signal or variable "current_rgb", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at VideoController.vhd(111): inferring latch(es) for signal or variable "SRAM_Addr", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at VideoController.vhd(111): inferring latch(es) for signal or variable "pxgen_data", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "pxgen_data[0]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[1]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[2]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[3]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[4]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[5]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[6]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[7]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[8]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[9]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[10]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[11]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[12]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[13]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[14]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_data[15]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[0]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[1]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[2]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[3]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[4]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[5]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[6]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[7]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[8]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[9]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[10]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[11]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[12]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[13]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[14]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[15]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[16]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_Addr[17]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[4]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[5]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[6]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[7]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[12]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[13]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[14]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[15]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[20]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[21]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[22]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "current_rgb[23]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[0]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[1]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[2]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[3]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[4]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[5]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[6]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[7]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[8]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[9]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[10]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[11]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[12]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[13]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[14]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "pxgen_cur[15]" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_LB" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_UB" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_WE" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_OE" at VideoController.vhd(111)
-Info (10041): Inferred latch for "SRAM_CE" at VideoController.vhd(111)
+Warning (10541): VHDL Signal Declaration warning at VideoController.vhd(62): used implicit default value for signal "cram_write_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10540): VHDL Signal Declaration warning at VideoController.vhd(63): used explicit default value for signal "cram_write_addr" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at VideoController.vhd(65): used explicit default value for signal "cram_write_strobe" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at VideoController.vhd(68): object "fifo_rdempty" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VideoController.vhd(68): object "fifo_wrfull" assigned a value but never read
+Warning (10540): VHDL Signal Declaration warning at VideoController.vhd(69): used explicit default value for signal "fifo_rdreq" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at VideoController.vhd(69): used explicit default value for signal "fifo_wrreq" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at VideoController.vhd(70): object "fifo_read_data" assigned a value but never read
+Warning (10540): VHDL Signal Declaration warning at VideoController.vhd(70): used explicit default value for signal "fifo_write_data" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(140): signal "cram_read_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(141): signal "cram_read_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(142): signal "cram_read_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(189): signal "pxgen_cur" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(201): signal "pxgen_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(215): signal "pxgen_cur" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(234): signal "sram_clear_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(235): signal "sram_clear_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(247): signal "sram_clear_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VideoController.vhd(249): signal "sram_clear_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "SRAM_CE", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "debug_state", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "SRAM_OE", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "SRAM_WE", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "SRAM_UB", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "SRAM_LB", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "SRAM_Addr", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "SRAM_Data", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "cram_read_addr", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "ram_next_state", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "pxgen_cur", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "pxgen_data", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at VideoController.vhd(165): inferring latch(es) for signal or variable "sram_clear_addr", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "sram_clear_addr[0]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[1]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[2]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[3]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[4]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[5]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[6]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[7]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[8]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[9]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[10]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[11]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[12]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[13]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[14]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[15]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[16]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "sram_clear_addr[17]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[0]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[1]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[2]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[3]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[4]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[5]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[6]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[7]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[8]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[9]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[10]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[11]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[12]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[13]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[14]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_data[15]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[0]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[1]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[2]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[3]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[4]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[5]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[6]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[7]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[8]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[9]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[10]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[11]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[12]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[13]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[14]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "pxgen_cur[15]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "ram_next_state.ClearData" at VideoController.vhd(165)
+Info (10041): Inferred latch for "ram_next_state.ClearAddr" at VideoController.vhd(165)
+Info (10041): Inferred latch for "ram_next_state.ReadDataVideo" at VideoController.vhd(165)
+Info (10041): Inferred latch for "ram_next_state.ReadAddrVideo" at VideoController.vhd(165)
+Info (10041): Inferred latch for "ram_next_state.CPUSlot1" at VideoController.vhd(165)
+Info (10041): Inferred latch for "ram_next_state.CPUSlot0" at VideoController.vhd(165)
+Info (10041): Inferred latch for "ram_next_state.Idle" at VideoController.vhd(165)
+Info (10041): Inferred latch for "cram_read_addr[0]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "cram_read_addr[1]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "cram_read_addr[2]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "cram_read_addr[3]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "cram_read_addr[4]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "cram_read_addr[5]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "cram_read_addr[6]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "cram_read_addr[7]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[0]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[1]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[2]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[3]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[4]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[5]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[6]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[7]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[8]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[9]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[10]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[11]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[12]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[13]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[14]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Data[15]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[0]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[1]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[2]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[3]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[4]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[5]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[6]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[7]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[8]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[9]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[10]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[11]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[12]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[13]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[14]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[15]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[16]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_Addr[17]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_LB" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_UB" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_WE" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_OE" at VideoController.vhd(165)
+Info (10041): Inferred latch for "debug_state[0]" at VideoController.vhd(165)
+Info (10041): Inferred latch for "SRAM_CE" at VideoController.vhd(165)
 Info (12129): Elaborating entity "VideoPLL" using architecture "A:syn" for hierarchy "VideoController:u_VideoController|VideoPLL:u_VideoPLL"
 Info (12128): Elaborating entity "altpll" for hierarchy "VideoController:u_VideoController|VideoPLL:u_VideoPLL|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "VideoController:u_VideoController|VideoPLL:u_VideoPLL|altpll:altpll_component"
@@ -933,34 +1463,174 @@ Info (12133): Instantiated megafunction "VideoController:u_VideoController|Video
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "valid_lock_multiplier" = "1"
 Info (12129): Elaborating entity "VideoSyncGenerator" using architecture "A:behavioral" for hierarchy "VideoController:u_VideoController|VideoSyncGenerator:u_videoSyncer"
-Warning (13039): The following bidir pins have no drivers
-    Warning (13040): Bidir "SRAM_DQ[0]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[1]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[2]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[3]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[4]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[5]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[6]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[7]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[8]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[9]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[10]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[11]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[12]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[13]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[14]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[15]" has no driver
+Info (12129): Elaborating entity "VideoCRAM" using architecture "A:syn" for hierarchy "VideoController:u_VideoController|VideoCRAM:u_cram"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
+    Info (12134): Parameter "init_file" = "default_palette.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "numwords_b" = "256"
+    Info (12134): Parameter "operation_mode" = "DUAL_PORT"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "widthad_b" = "8"
+    Info (12134): Parameter "width_a" = "24"
+    Info (12134): Parameter "width_b" = "24"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5cn1.tdf
+    Info (12023): Found entity 1: altsyncram_5cn1
+Info (12128): Elaborating entity "altsyncram_5cn1" for hierarchy "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_g7v1.tdf
+    Info (12023): Found entity 1: altsyncram_g7v1
+Info (12128): Elaborating entity "altsyncram_g7v1" for hierarchy "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1"
+Info (12129): Elaborating entity "VideoWriteFIFO" using architecture "A:syn" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo"
+Info (12128): Elaborating entity "dcfifo" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component"
+Info (12130): Elaborated megafunction instantiation "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component"
+Info (12133): Instantiated megafunction "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component" with the following parameter:
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "MAXIMIZE_SPEED=5,"
+    Info (12134): Parameter "lpm_numwords" = "32"
+    Info (12134): Parameter "lpm_showahead" = "OFF"
+    Info (12134): Parameter "lpm_type" = "dcfifo"
+    Info (12134): Parameter "lpm_width" = "34"
+    Info (12134): Parameter "lpm_widthu" = "5"
+    Info (12134): Parameter "overflow_checking" = "ON"
+    Info (12134): Parameter "rdsync_delaypipe" = "4"
+    Info (12134): Parameter "underflow_checking" = "ON"
+    Info (12134): Parameter "use_eab" = "ON"
+    Info (12134): Parameter "wrsync_delaypipe" = "4"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dcfifo_2hj1.tdf
+    Info (12023): Found entity 1: dcfifo_2hj1
+Info (12128): Elaborating entity "dcfifo_2hj1" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_d86.tdf
+    Info (12023): Found entity 1: a_graycounter_d86
+Info (12128): Elaborating entity "a_graycounter_d86" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_d86:rdptr_g1p"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_21c.tdf
+    Info (12023): Found entity 1: a_graycounter_21c
+Info (12128): Elaborating entity "a_graycounter_21c" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_21c:wrptr_g1p"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_11c.tdf
+    Info (12023): Found entity 1: a_graycounter_11c
+Info (12128): Elaborating entity "a_graycounter_11c" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|a_graycounter_11c:wrptr_gp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3nu.tdf
+    Info (12023): Found entity 1: altsyncram_3nu
+Info (12128): Elaborating entity "altsyncram_3nu" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_c2e.tdf
+    Info (12023): Found entity 1: dffpipe_c2e
+Info (12128): Elaborating entity "dffpipe_c2e" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|dffpipe_c2e:rdaclr"
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_5u7.tdf
+    Info (12023): Found entity 1: alt_synch_pipe_5u7
+Info (12128): Elaborating entity "alt_synch_pipe_5u7" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_vu8.tdf
+    Info (12023): Found entity 1: dffpipe_vu8
+Info (12128): Elaborating entity "dffpipe_vu8" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_5u7:rs_dgwp|dffpipe_vu8:dffpipe16"
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_6u7.tdf
+    Info (12023): Found entity 1: alt_synch_pipe_6u7
+Info (12128): Elaborating entity "alt_synch_pipe_6u7" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_0v8.tdf
+    Info (12023): Found entity 1: dffpipe_0v8
+Info (12128): Elaborating entity "dffpipe_0v8" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|alt_synch_pipe_6u7:ws_dgrp|dffpipe_0v8:dffpipe19"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_q16.tdf
+    Info (12023): Found entity 1: cmpr_q16
+Info (12128): Elaborating entity "cmpr_q16" for hierarchy "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|cmpr_q16:rdempty_eq_comp"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[0]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[1]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[2]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[3]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[4]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[5]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[6]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[7]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[8]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[9]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[10]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[11]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[12]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[13]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[14]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[15]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[16]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[17]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[18]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[19]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[20]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[21]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[22]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[23]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[24]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[25]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[26]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[27]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[28]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[29]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[30]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[31]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[32]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component|dcfifo_2hj1:auto_generated|altsyncram_3nu:fifo_ram|q_b[33]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[0]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[1]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[2]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[3]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[8]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[9]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[10]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[11]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[16]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[17]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[18]"
+        Warning (14320): Synthesized away node "VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component|altsyncram_5cn1:auto_generated|altsyncram_g7v1:altsyncram1|q_a[19]"
+Warning (14026): LATCH primitive "VideoController:u_VideoController|ram_next_state.CPUSlot0_892" is permanently enabled
+Warning (14026): LATCH primitive "VideoController:u_VideoController|ram_next_state.CPUSlot1_884" is permanently enabled
+Warning (14026): LATCH primitive "VideoController:u_VideoController|ram_next_state.ReadAddrVideo_876" is permanently enabled
+Warning (14026): LATCH primitive "VideoController:u_VideoController|ram_next_state.ReadDataVideo_868" is permanently enabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[0]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[1]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[2]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[3]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[4]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[5]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[6]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[7]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[8]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[9]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[10]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[11]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[12]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[13]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[14]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[15]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[16]" is permanently disabled
+Warning (14025): LATCH primitive "VideoController:u_VideoController|sram_clear_addr[17]" is permanently disabled
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "VideoController:u_VideoController|current_rgb[4]" merged with LATCH primitive "VideoController:u_VideoController|current_rgb[20]"
-    Info (13026): Duplicate LATCH primitive "VideoController:u_VideoController|current_rgb[5]" merged with LATCH primitive "VideoController:u_VideoController|current_rgb[21]"
-    Info (13026): Duplicate LATCH primitive "VideoController:u_VideoController|current_rgb[6]" merged with LATCH primitive "VideoController:u_VideoController|current_rgb[22]"
-    Info (13026): Duplicate LATCH primitive "VideoController:u_VideoController|current_rgb[7]" merged with LATCH primitive "VideoController:u_VideoController|current_rgb[23]"
-    Info (13026): Duplicate LATCH primitive "VideoController:u_VideoController|SRAM_OE" merged with LATCH primitive "VideoController:u_VideoController|SRAM_CE"
-    Info (13026): Duplicate LATCH primitive "VideoController:u_VideoController|SRAM_LB" merged with LATCH primitive "VideoController:u_VideoController|SRAM_CE"
-    Info (13026): Duplicate LATCH primitive "VideoController:u_VideoController|SRAM_UB" merged with LATCH primitive "VideoController:u_VideoController|SRAM_CE"
+    Info (13026): Duplicate LATCH primitive "VideoController:u_VideoController|SRAM_UB" merged with LATCH primitive "VideoController:u_VideoController|SRAM_LB"
+Warning (13012): Latch VideoController:u_VideoController|cram_read_addr[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VideoController:u_VideoController|ram_current_state.ReadAddrVideo
+Warning (13012): Latch VideoController:u_VideoController|cram_read_addr[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VideoController:u_VideoController|ram_current_state.ReadAddrVideo
+Warning (13012): Latch VideoController:u_VideoController|cram_read_addr[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VideoController:u_VideoController|ram_current_state.ReadAddrVideo
+Warning (13012): Latch VideoController:u_VideoController|cram_read_addr[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VideoController:u_VideoController|ram_current_state.ReadAddrVideo
+Warning (13012): Latch VideoController:u_VideoController|cram_read_addr[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VideoController:u_VideoController|ram_current_state.ReadAddrVideo
+Warning (13012): Latch VideoController:u_VideoController|cram_read_addr[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VideoController:u_VideoController|ram_current_state.ReadAddrVideo
+Warning (13012): Latch VideoController:u_VideoController|cram_read_addr[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VideoController:u_VideoController|ram_current_state.ReadAddrVideo
+Warning (13012): Latch VideoController:u_VideoController|cram_read_addr[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal VideoController:u_VideoController|ram_current_state.ReadAddrVideo
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[0]" is stuck at GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND
     Warning (13410): Pin "LEDR[2]" is stuck at GND
     Warning (13410): Pin "LEDR[3]" is stuck at GND
     Warning (13410): Pin "LEDR[4]" is stuck at GND
@@ -976,6 +1646,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[5]" is stuck at GND
     Warning (13410): Pin "LEDG[6]" is stuck at GND
     Warning (13410): Pin "LEDG[7]" is stuck at GND
+Info (17049): 56 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 14 input pin(s) that do not drive logic
@@ -993,16 +1664,17 @@ Warning (21074): Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
     Warning (15610): No output dependent on input pin "Clock_24[1]"
-Info (21057): Implemented 231 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 262 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 55 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 143 logic cells
+    Info (21061): Implemented 162 logic cells
+    Info (21064): Implemented 12 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 70 warnings
-    Info: Peak virtual memory: 494 megabytes
-    Info: Processing ended: Sun Jun 22 14:46:24 2014
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 153 warnings
+    Info: Peak virtual memory: 507 megabytes
+    Info: Processing ended: Sun Jun 22 16:54:52 2014
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 

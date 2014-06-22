@@ -51,7 +51,10 @@ begin
 			SRAM_OE => SRAM_OE_N,
 			SRAM_WE => SRAM_WE_N,
 			SRAM_LB => SRAM_LB_N,
-			SRAM_UB => SRAM_UB_N
+			SRAM_UB => SRAM_UB_N,
+			
+			debug_state => LEDR(3 downto 0),
+			debug_bits => SW(3 downto 0)
 		);
 	 
 	-- button and LED interfacing

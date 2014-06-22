@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sun Jun 22 14:46:24 2014
+Analysis & Synthesis Status : Successful - Sun Jun 22 16:54:52 2014
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
 Revision Name : BusRouter
 Top-level Entity Name : BusRouter
 Family : Cyclone II
-Total logic elements : 143
-    Total combinational functions : 141
+Total logic elements : 162
+    Total combinational functions : 160
     Dedicated logic registers : 24
 Total registers : 24
 Total pins : 87
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 3,072
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1

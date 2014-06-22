@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="BusRouter">
+		<CBX_INST_ENTRY INSTANCE_NAME="|BusRouter|VideoController:u_VideoController|VideoCRAM:u_cram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_5cn1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BusRouter|VideoController:u_VideoController|VideoWriteFIFO:u_writefifo|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_2hj1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
