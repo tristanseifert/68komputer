@@ -25,15 +25,15 @@ use ieee.std_logic_unsigned.all;
 
 entity VideoSyncGenerator is
 	PORT(
-		reset: IN std_logic;
-		PixelClock: IN std_logic;
-		HSync: OUT std_logic;
-		VSync: OUT std_logic;
+		reset: 				IN std_logic;
+		PixelClock:			IN std_logic;
+		HSync:				OUT std_logic;
+		VSync:				OUT std_logic;
 		
-		VideoOn: OUT std_logic; -- indicates whether colourshall be outputted
+		VideoOn:				OUT std_logic; -- indicates whether colourshall be outputted
 		
-		CurCol: OUT std_logic_vector(9 downto 0);
-		CurRow: OUT std_logic_vector(9 downto 0)
+		CurCol:				OUT std_logic_vector(9 downto 0);
+		CurRow:				OUT std_logic_vector(9 downto 0)
 	);
 end VideoSyncGenerator;
 
@@ -50,13 +50,12 @@ begin
 	-- if reset is asserted
 	if reset = '1'
 		then hcount <= (others => '0');
-	else if (PixelClock'event and PixelClock='1')
+	elsif (PixelClock'event and PixelClock='1')
 		then 
 			if hcount=799
 				then hcount <= (others => '0');
 				else hcount <= hcount + 1;
 			end if;
-		end if;
 	end if;
 end process;
 
@@ -83,16 +82,15 @@ vcounter: process(PixelClock, reset)
 begin
 	if reset = '1'
 		then vcount <= (others => '0');
-		else if (PixelClock'event and PixelClock='1')
-			then
-				if hcount=799
-					then
-						if vcount=524
-							then vcount <= (others => '0');
-							else vcount <= vcount + 1;
-						end if;
-				end if;
-		end if;
+	elsif (PixelClock'event and PixelClock='1')
+		then
+			if hcount=799
+				then
+					if vcount=524
+						then vcount <= (others => '0');
+						else vcount <= vcount + 1;
+					end if;
+			end if;
 	end if;
 end process;
 

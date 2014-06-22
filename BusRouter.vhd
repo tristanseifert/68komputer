@@ -4,30 +4,30 @@ use ieee.numeric_std.all;
 
 entity BusRouter is 
 	PORT(
-		SW:			IN std_logic_vector(9 downto 0);
-		KEY:			IN std_logic_vector(3 downto 0);
-		LEDR:			OUT std_logic_vector(9 downto 0);
-		LEDG:			OUT std_logic_vector(7 downto 0);
+		SW:					IN std_logic_vector(9 downto 0);
+		KEY:					IN std_logic_vector(3 downto 0);
+		LEDR:					OUT std_logic_vector(9 downto 0);
+		LEDG:					OUT std_logic_vector(7 downto 0);
 		
-		Clock_24:	IN std_logic_vector(1 downto 0);
+		Clock_24:			IN std_logic_vector(1 downto 0);
 		
 		-- video
-		VGA_R:		OUT std_logic_vector(3 downto 0);
-		VGA_G:		OUT std_logic_vector(3 downto 0);
-		VGA_B:		OUT std_logic_vector(3 downto 0);
-		VGA_VS:		OUT std_logic := '0';
-		VGA_HS:		OUT std_logic := '0';
+		VGA_R:				OUT std_logic_vector(3 downto 0);
+		VGA_G:				OUT std_logic_vector(3 downto 0);
+		VGA_B:				OUT std_logic_vector(3 downto 0);
+		VGA_VS:				OUT std_logic := '0';
+		VGA_HS:				OUT std_logic := '0';
 		
 		-- SRAM
-		SRAM_ADDR: 	OUT std_logic_vector(17 downto 0);
-		SRAM_DQ: 	INOUT std_logic_vector(15 downto 0);
+		SRAM_ADDR: 			OUT std_logic_vector(17 downto 0);
+		SRAM_DQ: 			INOUT std_logic_vector(15 downto 0);
 		
-		SRAM_CE_N:	OUT std_logic;
-		SRAM_OE_N:	OUT std_logic;
-		SRAM_WE_N:	OUT std_logic;
+		SRAM_CE_N:			OUT std_logic;
+		SRAM_OE_N:			OUT std_logic;
+		SRAM_WE_N:			OUT std_logic;
 		
-		SRAM_LB_N:	OUT std_logic;
-		SRAM_UB_N:	OUT std_logic
+		SRAM_LB_N:			OUT std_logic;
+		SRAM_UB_N:			OUT std_logic
 	);
 end BusRouter;
 
