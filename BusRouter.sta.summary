@@ -1,0 +1,37 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
+Slack : 35.953
+TNS   : 0.000
+
+Type  : Slow Model Hold 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
+Slack : 0.972
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
+Slack : 18.729
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'Clock_24[0]'
+Slack : 20.833
+TNS   : 0.000
+
+Type  : Fast Model Setup 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
+Slack : 38.198
+TNS   : 0.000
+
+Type  : Fast Model Hold 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
+Slack : 18.840
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'Clock_24[0]'
+Slack : 20.833
+TNS   : 0.000
+
+------------------------------------------------------------
