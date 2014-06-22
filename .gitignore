@@ -1,3 +1,9 @@
 db/*
 incremental_db/*
 output_files/*
+*.pof
+*.map*
+*.fit
+*.done
+*.rpt
+*.summary
