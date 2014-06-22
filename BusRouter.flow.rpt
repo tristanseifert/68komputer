@@ -1,5 +1,5 @@
 Flow report for BusRouter
-Sun Jun 22 16:54:52 2014
+Sun Jun 22 17:30:50 2014
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Jun 22 16:54:52 2014       ;
+; Flow Status                        ; Successful - Sun Jun 22 17:30:48 2014       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; BusRouter                                   ;
 ; Top-level Entity Name              ; BusRouter                                   ;
 ; Family                             ; Cyclone II                                  ;
 ; Device                             ; EP2C20F484C7                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 162                                         ;
-;     Total combinational functions  ; 160                                         ;
-;     Dedicated logic registers      ; 24                                          ;
-; Total registers                    ; 24                                          ;
-; Total pins                         ; 87                                          ;
+; Total logic elements               ; 136 / 18,752 ( < 1 % )                      ;
+;     Total combinational functions  ; 134 / 18,752 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 25 / 18,752 ( < 1 % )                       ;
+; Total registers                    ; 27                                          ;
+; Total pins                         ; 87 / 315 ( 28 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 3,072                                       ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 1                                           ;
+; Total memory bits                  ; 3,072 / 239,616 ( 1 % )                     ;
+; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                              ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/22/2014 16:54:48 ;
+; Start date & time ; 06/22/2014 17:30:35 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BusRouter           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 121382408388.140347408804032          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 121382408388.140347623404084          ; --            ; --          ; --         ;
 ; FITTER_EFFORT                       ; Fast Fit                              ; Auto Fit      ; --          ; --         ;
 ; FMAX_REQUIREMENT                    ; 50 MHz                                ; --            ; --          ; --         ;
 ; IGNORE_CLOCK_SETTINGS               ; On                                    ; Off           ; --          ; --         ;
@@ -99,29 +99,38 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:04     ; 1.0                     ; 507 MB              ; 00:00:03                           ;
-; Total                ; 00:00:04     ; --                      ; --                  ; 00:00:03                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 507 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 678 MB              ; 00:00:05                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 421 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 396 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:11                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+----------------------+-----------------------+-----------+------------+----------------+
-; Module Name          ; Machine Hostname      ; OS Name   ; OS Version ; Processor type ;
-+----------------------+-----------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; Squelcherator-VM-Win7 ; Windows 7 ; 6.1        ; x86_64         ;
-+----------------------+-----------------------+-----------+------------+----------------+
++---------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                             ;
++---------------------------+-----------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname      ; OS Name   ; OS Version ; Processor type ;
++---------------------------+-----------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; Squelcherator-VM-Win7 ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; Squelcherator-VM-Win7 ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; Squelcherator-VM-Win7 ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Squelcherator-VM-Win7 ; Windows 7 ; 6.1        ; x86_64         ;
++---------------------------+-----------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off komputatron -c BusRouter
+quartus_fit --read_settings_files=off --write_settings_files=off komputatron -c BusRouter
+quartus_asm --read_settings_files=off --write_settings_files=off komputatron -c BusRouter
+quartus_sta komputatron -c BusRouter
 
 
 

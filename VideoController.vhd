@@ -69,12 +69,8 @@ architecture behavioral of VideoController is
 	signal fifo_rdreq, fifo_wrreq: std_logic := '0';
 	signal fifo_read_data, fifo_write_data: std_logic_vector(33 downto 0) := (others => '0');
 	
-	-- SRAM clearing state machine
-	signal sram_clear_addr: std_logic_vector(17 downto 0) := (others => '0');
-	signal sram_clear_data: std_logic_vector(15 downto 0) := (others => '0');
-	
 	-- SRAM access state machine
-	type ram_state_type is (Idle, CPUSlot0, CPUSlot1, ReadAddrVideo, ReadDataVideo, ClearAddr, ClearData);
+	type ram_state_type is (SysReset, CPUSlot0, CPUSlot1, ReadAddrVideo, ReadDataVideo);
 	signal ram_current_state, ram_next_state: ram_state_type;
 begin
 -- video clock generator
@@ -149,12 +145,7 @@ end process;
 process (MemClk, reset)
 begin
 	if reset='1'
-		then		
-		--	if debug_bits(0) = '1'
-		--		then ram_current_state <= CPUSlot0;
-		--		else ram_current_state <= ClearAddr;
-		--	end if;
-			ram_current_state <= CPUSlot0;
+		then ram_current_state <= SysReset;
 	elsif rising_edge(MemClk)
 		then
 			ram_current_state <= ram_next_state;
@@ -165,25 +156,31 @@ end process;
 process(reset, ram_current_state, SRAM_Data, row, col)
 begin
 		case ram_current_state is
-			-- Idle state: nothing is happening
-			when Idle =>
-				SRAM_CE <= '1';
+			-- Reset state: the mem system is cleared out
+			when SysReset =>
+				SRAM_CE <= '0';
+				SRAM_OE <= '0';
+				SRAM_WE <= '1';
+				SRAM_UB <= '1';
+				SRAM_LB <= '1';
+				
+				SRAM_Addr <= (others => '0');
+				SRAM_Data <= (others => 'Z');
+				
+				ram_next_state <= CPUSlot0;
 			
 			-- CPU access slot 0
-			when CPUSlot0 => -- pixel 1
-				debug_state(0) <= '0';
-			
+			when CPUSlot0 => -- pixel 1			
 				-- configure SRAM for write, /WE controlled
 				SRAM_CE <= '0';
 				SRAM_OE <= '1';
-				
 				SRAM_WE <= '0';
 				SRAM_UB <= '0';
 				SRAM_LB <= '0';
 				
 				-- put address for write slot on bus
 				SRAM_Addr <= row(8 downto 0) & col(9 downto 1);
-				SRAM_Data <= row(8 downto 1) & row(8 downto 1);
+				SRAM_Data <= col(8 downto 1) & col(8 downto 1);
 			
 				-- perform colour lookup in CRAM for pixel 2 (7..0)
 				cram_read_addr <= pxgen_cur(7 downto 0);
@@ -191,10 +188,13 @@ begin
 			
 			when CPUSlot1 =>
 				-- finish write cycle
+				SRAM_CE <= '0';
+				SRAM_OE <= '0';
 				SRAM_WE <= '1';
 				SRAM_UB <= '1';
 				SRAM_LB <= '1';
 				
+				SRAM_Addr <= (others => '0');
 				SRAM_Data <= (others => 'Z');
 			
 				-- update pixel data
@@ -210,48 +210,26 @@ begin
 				SRAM_LB <= '0';
 			
 				SRAM_Addr <= row(8 downto 0) & col(9 downto 1);
+				SRAM_Data <= (others => 'Z');
 			
 				-- perform colour lookup in CRAM for pixel 1 (15..8)
 				cram_read_addr <= pxgen_cur(15 downto 8);
 				ram_next_state <= ReadDataVideo;
 		
 			-- Data is ready on SRAM, read it out and restore to idle state.
-			when ReadDataVideo =>			
-				pxgen_data <= SRAM_Data;
-				ram_next_state <= CPUSlot0;
-			
-			-- Write address and data to clearAddr
-			when ClearAddr =>
+			when ReadDataVideo =>
 				SRAM_CE <= '0';
-				SRAM_OE <= '1';
-			
-				SRAM_WE <= '0';
-				SRAM_UB <= '0';
-				SRAM_LB <= '0';
-			
-				debug_state(0) <= '1';
-			
-				SRAM_Addr <= sram_clear_addr;
-				SRAM_Data <= sram_clear_addr(7 downto 0) & sram_clear_addr(7 downto 0);
-			
-				ram_next_state <= ClearData;
-			
-			-- Write data to clear with, increment address
-			when ClearData =>
 				SRAM_OE <= '0';
-			
 				SRAM_WE <= '1';
 				SRAM_UB <= '1';
 				SRAM_LB <= '1';
-			
-				sram_clear_addr <= sram_clear_addr + 1;
-			
-				if sram_clear_addr>=262144
-					then 
-						ram_next_state <= CPUSlot0;
-						SRAM_Data <= (others => 'Z');
-					else ram_next_state <= ClearAddr;				
-				end if;
+				
+				SRAM_Addr <= (others => '0');
+				SRAM_Data <= (others => 'Z');
+				
+				pxgen_data <= SRAM_Data;
+				
+				ram_next_state <= CPUSlot0;
 			end case;
 end process;
 

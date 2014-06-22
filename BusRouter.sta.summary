@@ -3,46 +3,38 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[1]'
-Slack : -5.068
-TNS   : -40.988
-
-Type  : Slow Model Setup 'VideoController:u_VideoController|ram_current_state.CPUSlot0'
-Slack : -2.445
-TNS   : -20.045
+Slack : -5.610
+TNS   : -50.685
 
 Type  : Slow Model Setup 'VideoController:u_VideoController|ram_current_state.CPUSlot1'
-Slack : -0.695
-TNS   : -5.325
+Slack : -1.183
+TNS   : -12.343
 
-Type  : Slow Model Setup 'VideoController:u_VideoController|ram_current_state.ReadDataVideo'
-Slack : -0.609
-TNS   : -2.487
+Type  : Slow Model Setup 'VideoController:u_VideoController|ram_current_state.CPUSlot0~_Duplicate_2'
+Slack : -0.637
+TNS   : -2.389
 
 Type  : Slow Model Setup 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
-Slack : 35.242
+Slack : 35.852
 TNS   : 0.000
 
-Type  : Slow Model Hold 'VideoController:u_VideoController|ram_current_state.CPUSlot0'
-Slack : -2.624
-TNS   : -54.002
-
-Type  : Slow Model Hold 'VideoController:u_VideoController|ram_current_state.CPUSlot1'
-Slack : -2.562
-TNS   : -5.037
-
-Type  : Slow Model Hold 'VideoController:u_VideoController|ram_current_state.ReadDataVideo'
-Slack : -2.384
-TNS   : -25.437
+Type  : Slow Model Hold 'VideoController:u_VideoController|ram_current_state.CPUSlot0~_Duplicate_2'
+Slack : -3.386
+TNS   : -19.989
 
 Type  : Slow Model Hold 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[1]'
-Slack : 0.290
+Slack : 0.282
+TNS   : 0.000
+
+Type  : Slow Model Hold 'VideoController:u_VideoController|ram_current_state.CPUSlot1'
+Slack : 0.533
 TNS   : 0.000
 
 Type  : Slow Model Hold 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
-Slack : 0.984
+Slack : 0.972
 TNS   : 0.000
 
-Type  : Slow Model Minimum Pulse Width 'VideoController:u_VideoController|ram_current_state.CPUSlot0'
+Type  : Slow Model Minimum Pulse Width 'VideoController:u_VideoController|ram_current_state.CPUSlot0~_Duplicate_2'
 Slack : 0.500
 TNS   : 0.000
 
@@ -67,46 +59,38 @@ Slack : 20.833
 TNS   : 0.000
 
 Type  : Fast Model Setup 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[1]'
-Slack : -2.694
-TNS   : -22.658
-
-Type  : Fast Model Setup 'VideoController:u_VideoController|ram_current_state.CPUSlot0'
-Slack : -0.598
-TNS   : -3.772
+Slack : -2.936
+TNS   : -27.349
 
 Type  : Fast Model Setup 'VideoController:u_VideoController|ram_current_state.CPUSlot1'
-Slack : 0.483
+Slack : 0.307
 TNS   : 0.000
 
-Type  : Fast Model Setup 'VideoController:u_VideoController|ram_current_state.ReadDataVideo'
-Slack : 0.627
+Type  : Fast Model Setup 'VideoController:u_VideoController|ram_current_state.CPUSlot0~_Duplicate_2'
+Slack : 0.434
 TNS   : 0.000
 
 Type  : Fast Model Setup 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
-Slack : 37.974
+Slack : 38.042
 TNS   : 0.000
 
-Type  : Fast Model Hold 'VideoController:u_VideoController|ram_current_state.CPUSlot0'
-Slack : -1.784
-TNS   : -41.663
+Type  : Fast Model Hold 'VideoController:u_VideoController|ram_current_state.CPUSlot0~_Duplicate_2'
+Slack : -2.063
+TNS   : -14.196
 
 Type  : Fast Model Hold 'VideoController:u_VideoController|ram_current_state.CPUSlot1'
-Slack : -1.714
-TNS   : -3.901
-
-Type  : Fast Model Hold 'VideoController:u_VideoController|ram_current_state.ReadDataVideo'
-Slack : -1.681
-TNS   : -19.126
-
-Type  : Fast Model Hold 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
-Slack : 0.364
+Slack : 0.121
 TNS   : 0.000
 
 Type  : Fast Model Hold 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[1]'
-Slack : 0.421
+Slack : 0.292
 TNS   : 0.000
 
-Type  : Fast Model Minimum Pulse Width 'VideoController:u_VideoController|ram_current_state.CPUSlot0'
+Type  : Fast Model Hold 'u_VideoController|u_VideoPLL|altpll_component|pll|clk[0]'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'VideoController:u_VideoController|ram_current_state.CPUSlot0~_Duplicate_2'
 Slack : 0.500
 TNS   : 0.000
 
