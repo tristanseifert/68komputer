@@ -79,9 +79,6 @@ begin
 				
 			when x"F" =>
 				Display <= "0001110";
-			
-			when "ZZZZ" =>
-				Display <= (others => '1');
 		end case;
 	end if;
 end process;

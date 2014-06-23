@@ -23,7 +23,7 @@ use ieee.std_logic_arith.all;
 
 
 
-entity control_interface is
+entity sdr_control_interface is
 	
     generic (ASIZE : integer := 32);
 
@@ -49,14 +49,14 @@ entity control_interface is
          REF_REQ        : out     std_logic;                              -- Hidden refresh request
          CMD_ACK        : out     std_logic                               -- Command acknowledge
          );
-end control_interface;
+end sdr_control_interface;
 
 
 
 
 
 
-architecture RTL of control_interface is
+architecture RTL of sdr_control_interface is
 
 
 

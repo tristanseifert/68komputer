@@ -33,15 +33,10 @@ entity sdr_sdram is
          ROWSIZE        : integer := 12;
          COLSIZE        : integer := 8;
          BANKSIZE       : integer := 2;
-         ROWSTART       : integer := 8;         
-         COLSTART       : integer := 0;         
-         BANKSTART      : integer := 20			
+         ROWSTART       : integer := 8; -- Starting position of the row address within ADDR   
+         COLSTART       : integer := 0; -- Starting position of the column address within ADDR
+         BANKSTART      : integer := 20 -- Starting position of the bank address within ADDR
     );
-
-     --         BANKSIZE       : integer := 2;
-     --         ROWSTART       : integer := 9;          -- Starting position of the row address within ADDR   
-     --         COLSTART       : integer := 0;          -- Starting position of the column address within ADDR
-     --         BANKSTART      : integer := 20          -- Starting position of the bank address within ADDR
 				  
     port (
          CLK            : in      std_logic;                                   --System Clock
@@ -72,7 +67,7 @@ architecture RTL of sdr_sdram is
 
 -- component declarations
 	
-    component command
+    component sdr_command
          generic (
               ASIZE          : integer := 23;
               DSIZE          : integer := 32;
@@ -131,7 +126,7 @@ architecture RTL of sdr_sdram is
     end component;
 	
 	
-    component control_interface
+    component sdr_control_interface
          generic (
               ASIZE : integer := 32
          );
@@ -207,7 +202,7 @@ begin
 
  
 	-- instantiate the control interface module
-    control1 : control_interface
+    control1 : sdr_control_interface
          generic map (
               ASIZE => ASIZE
          )
@@ -236,7 +231,7 @@ begin
 	                
 	                
     -- instantiate the command module
-    command1 : command
+    command1 : sdr_command
          generic map(
               ASIZE 		=> ASIZE, 		
               DSIZE 		=> DSIZE, 		

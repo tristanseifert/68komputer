@@ -28,12 +28,12 @@ entity BusMonitor is
 		clk_cpu:				IN std_logic;
 		sys_reset:			INOUT std_logic;
 		
-		-- Blinking clock (5 Hz)
+		-- Blinking clock
 		blink_clk:			IN std_logic;
 	
 		-- 68k bus: system control
 		bus_reset:			IN std_logic;
-		bus_clk:				OUT std_logic; -- CPU clock
+		bus_clk:				INOUT std_logic; -- CPU clock
 		bus_halt:			INOUT std_logic;
 		bus_error:			IN std_logic;
 		
@@ -107,14 +107,21 @@ begin
 
 -- Green LEDs indicate the bus state:
 -- BERR | AS | RW | UDS | LDS | DTACK | BR | BG
-LEDG(7) <= bus_error;
-LEDG(6) <= bus_as;
-LEDG(5) <= bus_rw;
-LEDG(4) <= bus_uds;
-LEDG(3) <= bus_lds;
-LEDG(2) <= bus_dtack;
-LEDG(1) <= bus_br;
-LEDG(0) <= bus_bg;
+process(bus_clk, sys_reset, bus_error, bus_as, bus_rw, bus_uds, bus_lds, bus_dtack, bus_br, bus_bg)
+begin
+	if sys_reset='1' then
+	
+	elsif rising_edge(bus_clk) then
+		LEDG(7) <= bus_error;
+		LEDG(6) <= bus_as;
+		LEDG(5) <= bus_rw;
+		LEDG(4) <= bus_uds;
+		LEDG(3) <= bus_lds;
+		LEDG(2) <= bus_dtack;
+		LEDG(1) <= bus_br;
+		LEDG(0) <= bus_bg;
+	end if;
+end process;
 
 -- reset button
 sys_reset <= NOT KEY(3);

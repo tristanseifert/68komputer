@@ -6,12 +6,12 @@ entity BusRouter is
 	PORT(
 		SW:					IN std_logic_vector(9 downto 0);
 		KEY:					IN std_logic_vector(3 downto 0);
-		LEDR:					OUT std_logic_vector(9 downto 0);
-		LEDG:					OUT std_logic_vector(7 downto 0);
+		LEDR:					OUT std_logic_vector(9 downto 0) := (others => '0');
+		LEDG:					OUT std_logic_vector(7 downto 0) := (others => '0');
 		
-		Clock_24:			IN std_logic_vector(1 downto 0);
-		Clock_27:			IN std_logic_vector(1 downto 0);
-		Clock_50:			IN std_logic;
+		CLOCK_24:			IN std_logic_vector(1 downto 0);
+		CLOCK_27:			IN std_logic_vector(1 downto 0);
+		CLOCK_50:			IN std_logic;
 		
 		-- video
 		VGA_R:				OUT std_logic_vector(3 downto 0);
@@ -30,6 +30,57 @@ entity BusRouter is
 		
 		SRAM_LB_N:			OUT std_logic;
 		SRAM_UB_N:			OUT std_logic;
+		
+		-- SDRAM
+		DRAM_CS_N:			OUT std_logic;
+		DRAM_WE_N:			OUT std_logic;
+		
+		DRAM_CAS_N:			OUT std_logic;
+		DRAM_RAS_N:			OUT std_logic;
+		DRAM_ADDR:			OUT std_logic_vector(11 downto 0);
+		DRAM_BA_0:			OUT std_logic;
+		DRAM_BA_1:			OUT std_logic;
+		
+		DRAM_CKE:			OUT std_logic;
+		DRAM_CLK:			OUT std_logic;
+		
+		DRAM_DQ:				INOUT std_logic_vector(15 downto 0);
+		DRAM_LDQM:			OUT std_logic;
+		DRAM_UDQM:			OUT std_logic;
+		
+		-- Flash memory
+		FL_ADDR:				OUT std_logic_vector(21 downto 0);
+		FL_DQ:				INOUT std_logic_vector(7 downto 0);
+		FL_OE_N:				OUT std_logic := '1';
+		FL_RST_N:			OUT std_logic := '1';
+		FL_WE_N:				OUT std_logic := '1';
+		
+		-- PS2
+		PS2_CLK:				INOUT std_logic;
+		PS2_DAT:				INOUT std_logic;
+		
+		-- SD card
+		SD_MISO:				IN std_logic;
+		SD_MOSI:				OUT std_logic;
+		SD_SCLK:				OUT std_logic;
+		SD_CS:				OUT std_logic;
+		
+		-- UART
+		UART_RXD:			IN std_logic;
+		UART_TXD:			OUT std_logic;
+		
+		-- audio codec
+		I2C_SCLK:			INOUT std_logic;
+		I2C_SDAT:			INOUT std_logic;
+		
+		AUD_ADCDAT:			IN std_logic;
+		AUD_ADCLRCK:		OUT std_logic;
+		
+		AUD_BCLK:			OUT std_logic;
+		AUD_XCK:				OUT std_logic;
+		
+		AUD_DACDAT:			OUT std_logic;
+		AUD_DACLRCK:		OUT std_logic;
 		
 		-- seven segment displays
 		HEX0:					OUT std_logic_vector(6 downto 0);
@@ -88,7 +139,7 @@ begin
 		port map(
 			reset => sys_reset,
 	 
-			In_Clk_24 => Clock_24(0),
+			In_Clk_24 => CLOCK_24(0),
 			Out_R => VGA_R,
 			Out_G => VGA_G,
 			Out_B => VGA_B,
@@ -118,11 +169,48 @@ begin
 			bus_cs => cs_video
 		);
 	
+	-- SDRAM controller
+	u_sdram: entity work.BusSDRAM(behavioral)
+		port map(
+			reset => sys_reset,
+			reset_n => bus_reset,
+			sdram_clk => clk_sdram,
+			
+			bus_cs => cs_ram,
+			bus_clk => clk_cpu,
+			bus_address => bus_addr (22 downto 0),
+			bus_data => bus_data,
+			
+			bus_rw => bus_rw,
+			bus_as => bus_as,
+			bus_dtack => bus_dtack,
+			
+			bus_uds => bus_uds,
+			bus_lds => bus_lds,
+			
+			DRAM_CS_N => DRAM_CS_N,
+			DRAM_WE_N => DRAM_WE_N,
+			
+			DRAM_CAS_N => DRAM_CAS_N,
+			DRAM_RAS_N => DRAM_RAS_N,
+			
+			DRAM_ADDR => DRAM_ADDR,
+			DRAM_BA_0 => DRAM_BA_0,
+			DRAM_BA_1 => DRAM_BA_1,
+			
+			DRAM_CKE => DRAM_CKE,
+			DRAM_CLK => DRAM_CLK,
+			
+			DRAM_DQ => DRAM_DQ,
+			DRAM_LDQM => DRAM_LDQM,
+			DRAM_UDQM => DRAM_UDQM
+		);
+	
 	-- bus PLL
 	u_buspll: entity work.BusPLL(SYN)
 		port map(
 			areset => sys_reset,
-			inclk0 => Clock_50,
+			inclk0 => CLOCK_50,
 			c0 => clk_cpu,
 			c1 => clk_sdram
 		);

@@ -24,7 +24,7 @@ use ieee.std_logic_arith.all;
 
 
 
-entity command is
+entity sdr_command is
 	
 	generic (
 		ASIZE 		: integer := 23;
@@ -64,14 +64,14 @@ entity command is
 		CAS_N		: out	std_logic;							-- SDRAM CAS
 		WE_N		: out	std_logic							-- SDRAM WE_N
 	);
-end command;
+end sdr_command;
 
 
 
 
 
 
-architecture RTL of command is
+architecture RTL of sdr_command is
 
 
 
