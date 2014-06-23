@@ -50,7 +50,7 @@ begin
 	-- if reset is asserted
 	if reset = '1'
 		then hcount <= (others => '0');
-	elsif (PixelClock'event and PixelClock='1')
+	elsif rising_edge(PixelClock)
 		then 
 			if hcount=799
 				then hcount <= (others => '0');
@@ -82,7 +82,7 @@ vcounter: process(PixelClock, reset)
 begin
 	if reset = '1'
 		then vcount <= (others => '0');
-	elsif (PixelClock'event and PixelClock='1')
+	elsif rising_edge(PixelClock)
 		then
 			if hcount=799
 				then
